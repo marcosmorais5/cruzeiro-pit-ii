@@ -1,0 +1,158 @@
+		
+		
+		
+			<input type='hidden' id='cod' class='to-save'><br>
+			
+			<!--data: <input type='text' id='data' class='to-save typeDate'><br>-->
+			<!--idcliente: <input type='text' id='idcliente' class='to-save'><br>-->
+
+		<!-- idtipopagamento: <input type='text' id='idtipopagamento' class='to-save'> -->
+		
+		<h4 class="mb-3 alert barra_fis">Dados Gerais</h4>
+		
+		<div class="row">
+			<div class="col-md-3 mb-3">
+				
+	            <label for="id_pir_date" class="font-weight-bold">Data</label>
+				<div class="input-group">
+					<input type="text" name="data" id="data" class="form-control typeDate to-save" dest="#id_pir_date_time" time="#id_pir_time" placeholder="Date"/>
+				</div>
+				
+			</div>
+			
+			<div class="col-md-9 mb-3">
+				
+				<label for="idcliente" class="font-weight-bold">Cliente</label>
+				<div class="input-group">
+				
+					<select name="idcliente" id="idcliente" class="custom-select to-save">
+						<option value="-1">Selecione...</option>
+					</select>
+					
+					<div class="input-group-append" id="id_button_box_copy_local_from">
+						<button type="button" class="btn btn-info orcamento-cadastro-cliente">Cadastrar Cliente</button>
+					</div>
+				
+				</div>
+			</div>
+			
+		</div>
+		<div class="row">
+			
+			<div class="col-md-3 mb-3">
+				<label for="idservico" class="font-weight-bold">Serviço</label>
+				<select name="idservico" id="idservico" class="custom-select w-100 to-save">
+				<option value="">Selecione...</option>
+				</select>
+			</div>
+		
+			<div class="col-md-4  mb-3">
+				<label for="idprocedimento" class="font-weight-bold">Procedimento</label>
+				<select name="idprocedimento" id="idprocedimento" class="custom-select w-100 to-save">
+				<option value="">Selecione...</option>
+				</select>
+			</div>
+			
+			<div class="col-md-2 mb-3">
+				<label for="idlateralidade" class="font-weight-bold">Lateralidade</label>
+				<select name="idlateralidade" id="idlateralidade" class="custom-select w-100 to-save">
+				<option value="">Selecione...</option>
+				</select>
+			</div>
+			
+			<div class="col-md-3 mb-3">
+				<label for="idstatus" class="font-weight-bold">OPME</label>
+				<select name="idopme" id="idopme" class="custom-select w-100 to-save">
+				<option value="">Selecione...</option>
+				</select>
+			</div>
+		
+			
+		</div>
+		
+		<div class="row">
+			<div class="col-md-3 mb-3">
+				
+	            <label for="id_pir_date" class="font-weight-bold">Data Realização</label>
+				<div class="input-group">
+					<input type="text" name="datarealizacao" id="datarealizacao" class="form-control typeDate to-save" placeholder="__/__/____"/>
+				</div>
+				
+			</div>
+			
+			
+			<div class="col-md-4 mb-3">
+				<label for="idmedico" class="font-weight-bold">Médico</label>
+				<select name="idmedico" id="idmedico" class="custom-select w-100 to-save">
+				<option value="">Selecione...</option>
+				</select>
+			</div>
+			
+			<div class="col-md-3 mb-3">
+				<label for="idstatus" class="font-weight-bold">Status</label>
+				<select name="idstatus" id="idstatus" class="custom-select w-100 to-save">
+				<option value="">Selecione...</option>
+				</select>
+			</div>
+		
+			
+		</div>
+		
+		<!--idprocedimento: <input type='text' id='idprocedimento' class='to-save'><br>-->
+		<div class="esconde-se-sem-despesa">
+			<h4 class="mb-3 alert barra_fis">Dados Fianceiros</h4>
+			<div class="row">
+				
+				<div class="col-md-3 mb-3">
+					
+					<label for="id_pir_date" class="font-weight-bold">Valor R$</label>
+					<div class="input-group">
+						<input type="text" name="valoroperacao" id="valoroperacao" class="form-control currencyBRL to-save" placeholder="R$"/>
+					</div>
+					
+				</div>
+				
+				<div class="col-md-3 mb-3">
+					<label for="idtipopagamento" class="font-weight-bold">Pagamento</label>
+					<select name="idtipopagamento" id="idtipopagamento" class="custom-select w-100 to-save">
+					<option value="">Selecione...</option>
+					</select>
+				</div>
+				
+				
+			
+			</div>
+		</div>
+		<div class="row">
+			
+			<div class="col-md-12 mb-3">
+				
+	            <label for="obs" class="font-weight-bold">Observação / notas</label>
+				<div class="input-group">
+					
+					<textarea name="obs" id="obs" class="form-control to-save"></textarea>
+					
+				</div>
+				
+			</div>
+		
+		</div>
+
+
+		
+
+		
+			<input type='hidden' id='datecreated' class='to-save'>
+			<input type='hidden' id='dateupdate' class='to-save'>
+			<input type='hidden' id='datedeleted' class='to-save'>
+			<input type='hidden' id='craetedby' class='to-save'>
+			<input type='hidden' id='updatedby' class='to-save'>
+			<input type='hidden' id='deletedby' class='to-save'>
+
+
+
+
+
+
+
+			
