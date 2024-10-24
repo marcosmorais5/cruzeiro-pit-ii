@@ -10,5 +10,3 @@ O projeto consistiu em construir um programa com interface simples, mas funciona
 Alguns destes processos simples foram mapeados para criar o programa. De maneira geral, processos feitos
 em planilhas do excel foram traduzidos para uma interface simples e funcional com alertas e também uma área
 de dashboards.
-
-  teste de código
