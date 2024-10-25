@@ -6,7 +6,7 @@ if(!class_exists('Util')) require_once('class/Util.php');
 
 	
 	
-	<title>.: Médico de Olhos - SOC - Sistema :.</title>
+	<title>.: Sistema de Orçamentos :.</title>
 	<script>
 		
 		
