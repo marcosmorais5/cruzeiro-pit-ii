@@ -1,3 +1,10 @@
+
+/* FAZENDO PARSER EM COLUNAS DE TIPOS DISTINTOS
+*
+* Baseados em classes CSS, os dados de uma célula são traduzidos para um formato. Por exemplo, uma data que vem do banco de dados
+* no formato yyyy-mm-dd é traduzida para o formato dd/mm/yyyy
+*
+* */
 function filaOrcamentoSubstituirFila(total_geral){
 	
 	if(typeof(total_geral) == 'undefined') total_geral = 0.0;
@@ -10,6 +17,7 @@ function filaOrcamentoSubstituirFila(total_geral){
 			obj = $(this);
 			conteudo_celula = $.trim(obj.text());
 			
+			/* Formatando células do tipo Dinheiro */
 			if(obj.hasClass("valor_BRL")){
 				
 				obj.css("text-align", "right");
@@ -23,6 +31,7 @@ function filaOrcamentoSubstituirFila(total_geral){
 				
 				conteudo_celula = "R$ "+ UTILS.formatarMoedaBRL(conteudo_celula);
 				
+			/* Formatando células do tipo Data */
 			}else if(obj.hasClass("typeData")){
 				
 				if(conteudo_celula == "null"){
@@ -53,11 +62,15 @@ function filaOrcamentoSubstituirFila(total_geral){
 						
 				}
 				
+			/* Formatando células do tipo 'link' */
 			}else if(!obj.hasClass("link_id")){
 				
 			 
 				if(conteudo_celula == "-1" || conteudo_celula == "0") obj.addClass("font-italic");
 				
+				/* Convertendo o valor da célula, que é um ID, para o respectivo nome de uma hash
+				* Exemplo: a célula "<td> class='link_id'>1</td>" se torma "<td> class='link_id'>John Doe</td>"
+				* */
 				if(obj.hasClass("linha_idcliente")) conteudo_celula = json_clientes["idcliente_" + conteudo_celula];
 				if(obj.hasClass("linha_idmedico"))  conteudo_celula = json_medicos["idmedico_" + conteudo_celula];
 				if(obj.hasClass("linha_idstatus"))  conteudo_celula = json_status_fila["idstatus_" + conteudo_celula];

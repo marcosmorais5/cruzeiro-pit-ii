@@ -631,6 +631,23 @@ var UTILS = {
 		
 	},
 	
+
+	//if(typeof(json_option_ativo) != 'undefined') UTILS.appendOptions("#ativo", json_option_ativo, ["idativo", "ativo"]);
+
+	/* void: UTILS.appendOptionsValidationUndefined(strId, json_hash, arr_key_fields) 
+	*
+	* This function validades if a HASH received is defined and if it is, append the options to the list of values
+	* @param: strId --> ID of the selectbox where the values will be appended
+	* @param: json_hash --> hash of values to fullfill the selectbox
+	* @param: arr_key_fields --> key to be found in the 'json_hash' to fullfill respetievely the value and display name of the <option> in the selectbox
+	*
+	* */
+	"appendOptionsValidationUndefined": function(strId, json_hash, arr_key_fields){
+
+		//if(typeof(json_option_ativo) != 'undefined') UTILS.appendOptions("#ativo", json_option_ativo, ["idativo", "ativo"]);
+		if(typeof(json_hash) != 'undefined') UTILS.appendOptions(strId, json_hash, arr_key_fields);
+
+	},
 	"appendOptions": function(obj, jsons, array_keys){
 		
 		
@@ -713,8 +730,6 @@ var UTILS = {
 	"checkRequirementsValues": function(input_text, class_to_check){
 		
 		arr_selected = UTILS.toRequirementsArray( input_text );
-		
-		//console.log(arr_selected);
 		
 		$(class_to_check).each(function(){
 			
@@ -1097,10 +1112,19 @@ var UTILS = {
 		
 	},
 	
-	/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
-	* CONVERTE UMA STRING DE DATA 'dd/mm/aaaa HH:mm' EM OBJETO DE DATE
-	*  retorna Date()
-	* */
+	/**
+ 	* Converte uma data em formato de string para um objeto Date.
+ 	*
+ 	* @param {string} date - A data deve estar no formato "dd/mm/aaaa HH:mm".
+ 	* @returns {Date} Retorna um objeto Date correspondente à data fornecida ou `null` se o formato for inválido.
+ 	*
+ 	* @throws {Error} Lança um erro se o `dateString` não for uma string válida.
+ 	*
+ 	* @example
+ 	* // Exemplo de uso:
+ 	* const date = UTILS.toDate("01/01/2024 10:00");
+ 	* console.log(date);
+ 	*/
 	"toDate": function (date){
 		
 		if(UTILS.isObjectDate(date)){
