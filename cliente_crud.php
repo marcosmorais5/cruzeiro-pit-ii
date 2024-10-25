@@ -174,17 +174,3 @@ if($_SERVER['REQUEST_METHOD'] == "GET"){
 
 
 echo(json_encode($arr_output));
-
-/*
-
-idusuario: <input type='text' id='idusuario' class='to-save'><br>
-loginusuario: <input type='text' id='loginusuario' class='to-save'><br>
-nomeusuario: <input type='text' id='nomeusuario' class='to-save'><br>
-senhausuario: <input type='text' id='senhausuario' class='to-save'><br>
-ativo: <input type='text' id='ativo' class='to-save'><br>
-datecreated: <input type='text' id='datecreated' class='to-save'><br>
-dateupdated: <input type='text' id='dateupdated' class='to-save'><br>
-grupo: <input type='text' id='grupo' class='to-save'><br>
-
-
-*/

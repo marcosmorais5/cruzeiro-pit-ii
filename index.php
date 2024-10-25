@@ -87,16 +87,11 @@ if(!class_exists("Grupo")) require_once("class/Grupo.php");
 					"<thead>"+ DEL +
 					"<tr>"+ DEL +
 					"<th>Cliente</th>"+ DEL +
-					//"<th>Serviço</th>"+ DEL +
-					//"<th>Procedimento</th>"+ DEL +
-					//"<th>Lateralidade</th>"+ DEL +
 					"<th>Médico</th>"+ DEL +
-					//"<th>OPME</th>"+ DEL +
 					"<th>Valor</th>"+ DEL +
 					"<th>Pagamento</th>"+ DEL +
 					"<th>Status</th>"+ DEL +
 					"<th>Orientador</th>"+ DEL +
-					//"<th>Data Fechado</th>"+ DEL +
 					"<th>Observação</th>"+ DEL +
 					"<th>Caixa</th>"+ DEL +
 					"<tr>"+ DEL +
@@ -132,22 +127,13 @@ if(!class_exists("Grupo")) require_once("class/Grupo.php");
 							$.each(data.filacaixa, function(i, obj){
 								
 								let linha = "<tr class='linhas'>"+
-									//"<td class='linha_cod link_id'><a href='orcamento_cadastro.php?cod="+ obj.cod +"'>Abrir "+ obj.cod +"</a></td>"+
-									//"<td class='linha_data typeData'>"+ obj.data +"</td>"+
-									//"<td class='linha_data typeData'>"+ obj.datarealizacao +"</td>"+
+
 									"<td class='linha_idcliente'>"+ obj.idcliente +"</td>"+
-									
-									
-									//"<td class='linha_idservico'>"+ obj.idservico +"</td>"+
-									//"<td class='linha_idprocedimento'>"+ obj.idprocedimento +"</td>"+
-									//"<td class='linha_idlateralidade'>"+ obj.idlateralidade +"</td>"+
 									"<td class='linha_idmedico'>"+ obj.idmedico +"</td>"+
-									//"<td class='linha_idopme'>"+ obj.idopme +"</td>"+
 									"<td class='linha_valoroperacao valor_BRL'>"+ obj.valoroperacao +"</td>"+
 									"<td class='linha_idtipopagamento'>"+ obj.idtipopagamento +"</td>"+
 									"<td class='linha_idstatus'>"+ obj.idstatus +"</td>"+
 									"<td class='linha_idcraetedby'>"+ obj.craetedby +"</td>"+
-									//"<td class='linha_datafechado typeData'>"+ obj.dateclosed +"</td>"+
 									"<td class='linha_obs'>"+ obj.obs +"</td>"+
 									"<td class='linha_validar link_id align-center'><button type='button' title='Clique aqui para informar de que o valor foi recebido pelo caixa' class='btn btn-success caixa-recebeu' PUT='{\"cod\":"+ obj.cod +"}'>Valor Recebido</button></td>"+
 									"</tr>\n";

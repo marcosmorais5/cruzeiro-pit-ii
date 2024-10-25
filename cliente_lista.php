@@ -1,17 +1,7 @@
 <?php
 require_once("inc/session.php");
 
-//if(!class_exists("Medico")) require_once("class/Medico.php");
-//if(!class_exists("TipoPagamento")) require_once("class/TipoPagamento.php");
-//if(!class_exists("Servico")) require_once("class/Servico.php");
-//if(!class_exists("Procedimento")) require_once("class/Procedimento.php");
-//if(!class_exists("Lateralidade")) require_once("class/Lateralidade.php");
-//if(!class_exists("Status")) require_once("class/Status.php");
-//if(!class_exists("Opme")) require_once("class/Opme.php");
-//if(!class_exists("Cliente")) require_once("class/Cliente.php");
-//if(!class_exists("Usuario")) require_once("class/Usuario.php");
 if(!class_exists("Grupo")) require_once("class/Grupo.php");
-
 
 ?>
 <html>

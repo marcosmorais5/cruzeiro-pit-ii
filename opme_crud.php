@@ -10,17 +10,6 @@ if(!class_exists("Usuario")) require_once("class/Usuario.php");
 $json = json_decode(file_get_contents("php://input"));
 
 
-
-
-/* CLASS METHODS DEFINITION 
-* $tmp_obj = new Opme();
-* $tmp_obj->setIdopme($idopme);
-* $tmp_obj->setOpme($opme);
-* $tmp_obj = null;
-* $tmp_obj->apply("i"); // Insert
-* $tmp_obj->apply("u"); // Update
-* $tmp_obj->apply("d"); // Delete
-* * * * * * * * * * * * * */
 $obj = new Opme();
 
 
@@ -146,17 +135,3 @@ if($_SERVER['REQUEST_METHOD'] == "GET"){
 
 
 echo(json_encode($arr_output));
-
-/*
-
-idusuario: <input type='text' id='idusuario' class='to-save'><br>
-loginusuario: <input type='text' id='loginusuario' class='to-save'><br>
-nomeusuario: <input type='text' id='nomeusuario' class='to-save'><br>
-senhausuario: <input type='text' id='senhausuario' class='to-save'><br>
-ativo: <input type='text' id='ativo' class='to-save'><br>
-datecreated: <input type='text' id='datecreated' class='to-save'><br>
-dateupdated: <input type='text' id='dateupdated' class='to-save'><br>
-grupo: <input type='text' id='grupo' class='to-save'><br>
-
-
-*/

@@ -35,12 +35,6 @@ if(!class_exists('Util')) require_once('class/Util.php');
 	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 	<script src="js/mo-chart.js"></script>	
 	
-	<!-- SEARCH IN DROP DOWN LIST
-	<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
-	
-	-->
-	
 	
 	<style>
 

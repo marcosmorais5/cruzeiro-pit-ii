@@ -28,7 +28,6 @@ if(!class_exists("Cliente")) require_once("class/Cliente.php");
 							if(data.response_code == 404 || data.response_code == 403){
 								
 								alert(data.response_msg);
-								//location.href = "orcamento_fila.php";
 								
 							}else{
 								

@@ -37,7 +37,6 @@ if($_GET['excel'] == "dump"){
 	
 	echo($tabela);
 
-		//urldecode()
 }
 
 

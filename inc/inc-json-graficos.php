@@ -184,12 +184,6 @@ var MONTHS_CHART = ["", "Janeiro", "Feveireo", "Março", "Abril", "Maio", "Junho
 						
 					});
 					
-					//if($total <= 0){
-					//		tabela += "<tr>"
-					//		tabela += "<td colspan='2'>Não foram registrados orçamentos neste período para realzar lançamento.</td>"
-					//		tabela += "</tr>"
-					//	
-					//}
 					tabela += "</tbody><table>";
 					
 					
