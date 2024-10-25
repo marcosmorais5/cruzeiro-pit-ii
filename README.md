@@ -1,5 +1,5 @@
 # Projeto de conclusão do curso de _engenharia de softare_ da Cruzeiro do Sul
-Projeto desenvolvido para o curso de engenharia de software da faculdade cruzeiro do sul digital.
+Projeto desenvolvido para o curso de engenharia de software da faculdade Cruzeiro do Sul Virtual.
 
 ## Descrição do projeto
 
@@ -12,3 +12,5 @@ em planilhas do excel foram traduzidos para uma interface simples e funcional co
 de dashboards.
 
 ## Linguagem e tecnlogia usadas
+
+Foi utilizado-uma abordagem clássica de programação com o uso de PHP, CSS, HTML e Javascript. Em termos de bibliotecas, foram utilizadas bibliotecas clássicas como jQuery e utilizado o framework bootstrap para a melhorar a velocidade e beleza do _front-end_.
