@@ -11,15 +11,21 @@ if(!class_exists('Util')) require_once('Util.php');
 
 
 
-// define("DB_IP", "127.0.0.1");
-// define("DB_USER", "root");
-// define("DB_PWD", "@tsystems.com");
-// define("DB_SCHEMA", "db_medicoolhos");
+if ($_SERVER['HTTP_HOST'] === 'localhost' || $_SERVER['HTTP_HOST'] === '127.0.0.1') {
+    define("DB_IP", "127.0.0.1");
+	define("DB_USER", "root");
+	define("DB_PWD", "@tsystems.com");
+	define("DB_SCHEMA", "db_medicoolhos");
+} else {
+	define("DB_IP", "fdb29.awardspace.net");
+	define("DB_USER", "4178222_orcamento");
+	define("DB_PWD", "Aa123456789@AwardSpace@DB");
+	define("DB_SCHEMA", "4178222_orcamento");
+}
 
-define("DB_IP", "fdb29.awardspace.net");
-define("DB_USER", "4178222_orcamento");
-define("DB_PWD", "Aa123456789@AwardSpace@DB");
-define("DB_SCHEMA", "4178222_orcamento");
+
+
+
 
 
 class Banco{
