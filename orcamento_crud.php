@@ -136,12 +136,6 @@ if($_SERVER['REQUEST_METHOD'] == "GET"){
 	$obj->setObs($json->obs);
 	
 	$arr_existe = $obj->jaExisteCadastrado();
-	//{
-	//	
-	//	$idcliente = (int)$this->getIdcliente();
-	//	$idservico = (int)$this->getIdservico();
-	//	$idprocedimento = (int)$this->setIdprocedimento();
-	//	$idlateralidade = (int)$this->setIdlateralidade();
 	
 	if(sizeof($arr_existe) > 0){
 		
@@ -339,15 +333,6 @@ if($_SERVER['REQUEST_METHOD'] == "GET"){
 			}
 				
 				
-			
-			
-		//}else{
-		//	
-		//	$arr_output['response_code'] = 404;
-		//	$arr_output['response_msg'] = "Nenhum registro encontrado para o código informado.";
-		//	
-		//}
-		
 	}
 	
 	

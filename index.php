@@ -1,6 +1,10 @@
 <?php
 require_once("inc/session.php");
 
+$start_time = microtime(true);
+
+
+
 if(!class_exists("Usuario")) require_once("class/Usuario.php");
 if(!class_exists("Grupo")) require_once("class/Grupo.php");
 ?>
@@ -355,6 +359,9 @@ if(!class_exists("Grupo")) require_once("class/Grupo.php");
 	
 	<?php require_once("inc/footer.php"); ?>
 
+
+
+	<?php echo "Tempo até o Ponto 1: " . (microtime(true) - $start_time) . " segundos.<br>"; ?>
 
 </body>
 </html>

@@ -63,35 +63,14 @@ if($_SERVER['REQUEST_METHOD'] == "GET"){
 	
 }else if($_SERVER['REQUEST_METHOD'] == "POST"){
 	
-	
-	//$obj->setData(Util::genFromDateToSQLWhole($json->data));
-	//$obj->setIdcliente($json->idcliente);
-	//$obj->setValoroperacao(Util::convertRealFloat($json->valoroperacao));
-	//$obj->setIdtipopagamento((int)$json->idtipopagamento);
-	//$obj->setIdservico((int)$json->idservico);
-	//$obj->setIdprocedimento((int)$json->idprocedimento);
-	//$obj->setDatarealizacao(Util::genFromDateToSQLWhole($json->datarealizacao));
-	//$obj->setIdmedico((int)$json->idmedico);
-	//$obj->setIdlateralidade((int)$json->idlateralidade);
-	//$obj->setIdopme((int)$json->idopme);
-	//$obj->setIdstatus((int)$json->idstatus);
-	//$obj->setDatecreated(Util::genFromDateToSQLWhole($json->datecreated));
-	//$obj->setDateupdate(Util::genFromDateToSQLWhole($json->dateupdate));
-	//$obj->setDatedeleted(Util::genFromDateToSQLWhole($json->datedeleted));
-	//$obj->setCraetedby((int)$_SESSION['cod_usuario']);
-	////$obj->setUpdatedby($json->updatedby);
-	////$obj->setDeletedby($json->deletedby);
-	//$obj->setObs($json->obs);
-	
 	$obj->setLoginusuario($json->loginusuario);
 	$obj->setNomeusuario($json->nomeusuario);
 	$obj->setSenhausuario(sha1($json->senhausuario));
 	$obj->setAtivo($json->ativo);
-	//$obj->setDatecreated($json->datecreated);
-	//$obj->setDateupdated($json->dateupdated);
 	$obj->setGrupo($json->grupo);
 
 	
+	/** Verificando a permissão do usuário atual */
 	$PODE_CRIAR_USUARIO = Usuario::getGrupoUsuario((int)$_SESSION['cod_usuario']) == "ADMINISTRADOR_MESTRE" || Usuario::getGrupoUsuario((int)$_SESSION['cod_usuario']) == "ADMINISTRADOR";
 	
 	if(!$PODE_CRIAR_USUARIO){
@@ -154,8 +133,6 @@ if($_SERVER['REQUEST_METHOD'] == "GET"){
 				$search_obj->setLoginusuario($json->loginusuario);
 				$search_obj->setNomeusuario($json->nomeusuario);
 				$search_obj->setAtivo($json->ativo);
-				//$obj->setDatecreated($json->datecreated);
-				//$obj->setDateupdated($json->dateupdated);
 				$search_obj->setGrupo($json->grupo);
 				
 				if(isset($json->senhausuarioreinicializar)){
@@ -165,25 +142,6 @@ if($_SERVER['REQUEST_METHOD'] == "GET"){
 					}
 					
 				}
-				//$search_obj->setData(Util::genFromDateToSQLWhole($json->data));
-				//$search_obj->setIdcliente($json->idcliente);
-				//$search_obj->setValoroperacao(Util::convertRealFloat($json->valoroperacao));
-				//$search_obj->setIdtipopagamento((int)$json->idtipopagamento);
-				//$search_obj->setIdservico((int)$json->idservico);
-				//$search_obj->setIdprocedimento((int)$json->idprocedimento);
-				//$search_obj->setDatarealizacao(Util::genFromDateToSQLWhole($json->datarealizacao));
-				//$search_obj->setIdmedico((int)$json->idmedico);
-				//$search_obj->setIdlateralidade((int)$json->idlateralidade);
-				//$search_obj->setIdopme((int)$json->idopme);
-				//$search_obj->setIdstatus((int)$json->idstatus);
-				////$search_obj->setDatecreated(Util::genFromDateToSQLWhole($json->datecreated));
-				////$search_obj->setDateupdate(Util::genFromDateToSQLWhole($json->dateupdate));
-				////$search_obj->setDatedeleted(Util::genFromDateToSQLWhole($json->datedeleted));
-				////$search_obj->setCraetedby((int)$_SESSION['cod_usuario']);
-				////$search_obj->setUpdatedby((int)$_SESSION['cod_usuario']);
-				//$search_obj->setUpdatedby((int)$_SESSION['cod_usuario']);
-				////$search_obj->setDeletedby($json->deletedby);
-				//$search_obj->setObs($json->obs);
 				
 				if(Usuario::getGrupoUsuario((int)$_SESSION['cod_usuario']) != "ADMINISTRADOR_MESTRE" && $json->grupo == "ADMINISTRADOR_MESTRE"){
 		
@@ -238,16 +196,3 @@ if($_SERVER['REQUEST_METHOD'] == "GET"){
 
 echo(json_encode($arr_output));
 
-/*
-
-idusuario: <input type='text' id='idusuario' class='to-save'><br>
-loginusuario: <input type='text' id='loginusuario' class='to-save'><br>
-nomeusuario: <input type='text' id='nomeusuario' class='to-save'><br>
-senhausuario: <input type='text' id='senhausuario' class='to-save'><br>
-ativo: <input type='text' id='ativo' class='to-save'><br>
-datecreated: <input type='text' id='datecreated' class='to-save'><br>
-dateupdated: <input type='text' id='dateupdated' class='to-save'><br>
-grupo: <input type='text' id='grupo' class='to-save'><br>
-
-
-*/

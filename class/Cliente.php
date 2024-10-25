@@ -168,7 +168,7 @@ class Cliente{
 			if($params['json']){
 				$json = $params['json'];
 			
-}
+			}
 			if((int)$params['limit'] > 0)
 				$ban->setLimit($params['limit']);
 
