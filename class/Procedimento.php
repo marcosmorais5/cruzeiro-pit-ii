@@ -238,13 +238,4 @@ class Procedimento{
 
 }
 
-/* CLASS METHODS DEFINITION 
-* $tmp_obj = new Procedimento();
-* $tmp_obj->setIdprocedimento($idprocedimento);
-* $tmp_obj->setProcedimento($procedimento);
-* $tmp_obj = null;
-* $tmp_obj->apply("i"); // Insert
-* $tmp_obj->apply("u"); // Update
-* $tmp_obj->apply("d"); // Delete
-* * * * * * * * * * * * * */
 ?>

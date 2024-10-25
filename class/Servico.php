@@ -236,13 +236,4 @@ class Servico{
 
 }
 
-/* CLASS METHODS DEFINITION 
-* $tmp_obj = new Servico();
-* $tmp_obj->setIdservico($idservico);
-* $tmp_obj->setServico($servico);
-* $tmp_obj = null;
-* $tmp_obj->apply("i"); // Insert
-* $tmp_obj->apply("u"); // Update
-* $tmp_obj->apply("d"); // Delete
-* * * * * * * * * * * * * */
 ?>

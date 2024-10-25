@@ -811,30 +811,4 @@ class Orcamento{
 }
 
 
-/* CLASS METHODS DEFINITION 
-* $tmp_obj = new Orcamento();
-* $tmp_obj->setCod($cod);
-* $tmp_obj->setData($data);
-* $tmp_obj->setIdcliente($idcliente);
-* $tmp_obj->setValoroperacao($valoroperacao);
-* $tmp_obj->setIdtipopagamento($idtipopagamento);
-* $tmp_obj->setIdservico($idservico);
-* $tmp_obj->setIdprocedimento($idprocedimento);
-* $tmp_obj->setDatarealizacao($datarealizacao);
-* $tmp_obj->setIdmedico($idmedico);
-* $tmp_obj->setIdlateralidade($idlateralidade);
-* $tmp_obj->setIdopme($idopme);
-* $tmp_obj->setIdstatus($idstatus);
-* $tmp_obj->setDatecreated($datecreated);
-* $tmp_obj->setDateupdate($dateupdate);
-* $tmp_obj->setDatedeleted($datedeleted);
-* $tmp_obj->setCraetedby($craetedby);
-* $tmp_obj->setUpdatedby($updatedby);
-* $tmp_obj->setDeletedby($deletedby);
-* $tmp_obj->setObs($obs);
-* $tmp_obj = null;
-* $tmp_obj->apply("i"); // Insert
-* $tmp_obj->apply("u"); // Update
-* $tmp_obj->apply("d"); // Delete
-* * * * * * * * * * * * * */
 ?>

@@ -1489,32 +1489,4 @@ if($_GET['sql_display'] == "sim"){
 	}
 }
 
-/*
-echo("<table border=1>");
-for($i = 1; $i < 255; $i++){
-	
-	//echo($i . " --&gt; &#". $i .";<br>");
-	$regra = "\$isso = str_replace(\"". chr($i) ."\", \"&amp;#". $i .";\", \$isso);";
-	echo("<tr><td>". $i . "</td><td>". chr($i) ."</td><td>&amp;#". $i .";</td><td>". $regra ."</td></tr>");
-	//echo("<tr><td>". $regra ."</td></tr>");
-	
-	//$isso = str_replace("'", "&#39;", $isso);
-	
-}
-
-echo("</table>");
-//Util::getServerConfiguration();
-//Util::replaceChars($isso);
-//echo(Util::secToHour(3968));
-
-header("Content-type: application/json; charset=utf-8");
-require_once("./Procedimento.php");
-
-echo("processando [Procedimento]...<br>");
-Util::parseAllToUTF8(new Procedimento());
-echo("FIM [Procedimento]...");
-*/
-
-
-
 ?>

@@ -246,14 +246,4 @@ class Medico{
 
 }
 
-/* CLASS METHODS DEFINITION 
-* $tmp_obj = new Medico();
-* $tmp_obj->setIdmedico($idmedico);
-* $tmp_obj->setNomemedico($nomemedico);
-* $tmp_obj->setAtivo($ativo);
-* $tmp_obj = null;
-* $tmp_obj->apply("i"); // Insert
-* $tmp_obj->apply("u"); // Update
-* $tmp_obj->apply("d"); // Delete
-* * * * * * * * * * * * * */
 ?>

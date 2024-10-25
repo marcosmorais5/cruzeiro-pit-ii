@@ -235,13 +235,4 @@ class Lateralidade{
 
 }
 
-/* CLASS METHODS DEFINITION 
-* $tmp_obj = new Lateralidade();
-* $tmp_obj->setIdlateralidade($idlateralidade);
-* $tmp_obj->setLateralidade($lateralidade);
-* $tmp_obj = null;
-* $tmp_obj->apply("i"); // Insert
-* $tmp_obj->apply("u"); // Update
-* $tmp_obj->apply("d"); // Delete
-* * * * * * * * * * * * * */
 ?>

@@ -239,13 +239,4 @@ class Opme{
 
 }
 
-/* CLASS METHODS DEFINITION 
-* $tmp_obj = new Opme();
-* $tmp_obj->setIdopme($idopme);
-* $tmp_obj->setOpme($opme);
-* $tmp_obj = null;
-* $tmp_obj->apply("i"); // Insert
-* $tmp_obj->apply("u"); // Update
-* $tmp_obj->apply("d"); // Delete
-* * * * * * * * * * * * * */
 ?>

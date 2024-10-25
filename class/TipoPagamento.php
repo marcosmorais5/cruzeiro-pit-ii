@@ -236,13 +236,4 @@ class TipoPagamento{
 
 }
 
-/* CLASS METHODS DEFINITION 
-* $tmp_obj = new TipoPagamento();
-* $tmp_obj->setIdtipopagamento($idtipopagamento);
-* $tmp_obj->setTipopagamento($tipopagamento);
-* $tmp_obj = null;
-* $tmp_obj->apply("i"); // Insert
-* $tmp_obj->apply("u"); // Update
-* $tmp_obj->apply("d"); // Delete
-* * * * * * * * * * * * * */
 ?>

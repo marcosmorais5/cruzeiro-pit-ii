@@ -351,23 +351,4 @@ class Usuario{
 
 }
 
-/* CLASS METHODS DEFINITION 
-* $tmp_obj = new Usuario();
-* $tmp_obj->setIdusuario($idusuario);
-* $tmp_obj->setLoginusuario($loginusuario);
-* $tmp_obj->setNomeusuario($nomeusuario);
-* $tmp_obj->setSenhausuario($senhausuario);
-* $tmp_obj->setAtivo($ativo);
-* $tmp_obj->setDatecreated($datecreated);
-* $tmp_obj->setDateupdated($dateupdated);
-* $tmp_obj = null;
-* $tmp_obj->apply("i"); // Insert
-* $tmp_obj->apply("u"); // Update
-* $tmp_obj->apply("d"); // Delete
-* * * * * * * * * * * * * */
-
-
-
-
-
 ?>
