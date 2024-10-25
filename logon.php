@@ -1,6 +1,10 @@
 <?php
 session_start();
 session_destroy();
+
+error_reporting(0); // Desativa todos os níveis de erro
+ini_set('display_errors', '0'); // Não exibe erros na saída
+
 ?>
 <html>
 <head>

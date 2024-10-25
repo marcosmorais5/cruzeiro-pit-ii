@@ -75,6 +75,9 @@ if(!class_exists('Util')) require_once('class/Util.php');
 	
 	</style>
 	
+
 	<script>
-		<?php require_once("inc/inc-json-replacement.php"); ?>
+		<?php
+		if(basename($_SERVER['REQUEST_URI']) != "logon.php") require_once("inc/inc-json-replacement.php");
+		?>
 	</script>

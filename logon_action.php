@@ -1,5 +1,10 @@
 <?php
+ob_start();
+error_reporting(0);
+
 session_start();
+
+
 
 if(!class_exists('Usuario')) require_once('class/Usuario.php');
 
@@ -51,4 +56,6 @@ if (strlen($json_params) > 0 && isValidJSON($json_params)){
 }
 
 echo(json_encode($output));
+
+ob_end_flush();
 ?>
