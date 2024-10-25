@@ -342,14 +342,28 @@ var MESSAGES = {
 /* DEFAULT PARSERS */
 var UTILS = {
 
+	/**
+ 	* Preenche um campo cujo DOM ID seja o mesmo da key do HASH
+ 	*
+ 	* @param {json} json - Um hash JSON de dados, por exemplo: {"nome": "John Doe", "idade": 99}.
+ 	* @returns {void}
+ 	*
+ 	* @throws {Error} Lança um erro se o `dateString` não for uma string válida.
+ 	*
+ 	* @example
+ 	* // Exemplo de uso:
+ 	* UTILS.loadFieldsFromJSON({"nome": "John Doe", "idade": 99});
+ 	*/
 	"loadFieldsFromJSON": function(json){
 		
+		/** Preenchendo o respectivo campo cujo ID seja a key do hash */
 		$.each(json, function(iKey, iVal){
 			
 			$("#"+ iKey).val(iVal);
 			
 		});
 		
+		/** Fazendo a daptação de campos do tipo dinheiro */
 		$(".currencyBRL").each(function(){
 			
 			$curr_val = $(this).val();
@@ -363,6 +377,7 @@ var UTILS = {
 				
 		}).focus().blur();
 		
+		/** Fazendo parser de campos do tipo Data */
 		$(".typeDate").each(function(){
 			
 			$curr_val = $(this).val();
@@ -373,6 +388,7 @@ var UTILS = {
 		});
 		
 	},
+
 	/* POPULATE IDS BASED ON THE JSON ID AND VALUE
 	*
 	* @param json_rec = a JSON object
@@ -397,6 +413,26 @@ var UTILS = {
 		
 		UTILS.checkRequirementsValues("#req_field", ".class_requirements_checkbox");
 	},
+
+
+	/**
+ 	* Fazer o post de dados via ajax
+ 	*
+ 	* @param {json} json_param - Um hash para processamentos processamento de um formulário por AJAX.
+	*                            O Hash deve ser no formato {"obj":"", "action:page": "", "json_class": "", "return_page": "", "method_type": ""}
+	*                            Onde:
+	*                                 - obj: é o formulário em si que está sendo submetido
+	*                                 - action_page: o controller para o qual o formulário será submetido
+	*                                 - json_class: a classe dos campos, para os quais os dados serão capturados para ser enviados
+	*                                 - return_page: página para onde o formulário será redirecionado, após o prcessamento com sucesso
+	*                                 - method_type: método de envio dos dados (padrão POST)
+ 	* @returns {void}
+ 	*
+ 	*
+ 	* @example
+ 	* // Exemplo de uso:
+ 	* UTILS.postData(obj, "controller.php", ".dados-a-enviar", "controller_post.php", "POST"});
+ 	*/
 	"postData": function(json_param){
 		
 

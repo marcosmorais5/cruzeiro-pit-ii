@@ -112,7 +112,7 @@ function cofnirmarTudoOkProcedimento(){
 		
 		PUT = $(this).attr("PUT");
 		
-		if(confirm("Você confirma que tudo está OK para a realização deste procedimento / exame?")){
+		if(confirm("Você confirma que tudo está OK para a realização deste procedimento / exame? Esta operação não é reversível e este registro sumirá da sua fila de próximos eventos.")){
 			
 			$.ajax({
 				
@@ -205,16 +205,19 @@ function geraTabelaProximosEventos(target_id){
 				conteudo_celula = obj.datarealizacao;
 				conteudo_celula = UTILS.toStringFromMySQL(conteudo_celula) +" 00:00";
 
-				console.log("conteudo_celula = "+ conteudo_celula);
-				console.log("data.data_hoje = "+ data.data_hoje);
+				
 				
 				
 				diffDays = UTILS.diffDays(data.data_hoje, conteudo_celula);
-				console.log("diffDays = "+ diffDays);
+				/** Convetendo para dias inteiros */
+				diffDays =  diffDays.toFixed(0);
+
+
+
 
 				/* MENSAGENS DE DIAS E COR DE LINHA */
 				days_msg = diffDays +" dia(s)";
-				if(diffDays < 0) days_msg = "<strong>Há "+ ((-1) * diffDays) +" dia(s)</strong>";
+				if(diffDays < 0)  days_msg = "<strong>Há "+ ((-1) * diffDays) +" dia(s)</strong>";
 				if(diffDays == 0) days_msg = "<strong>Hoje</strong>";
 				if(diffDays == 1) days_msg = "<strong>Amanhã</strong>";
 				
