@@ -6,7 +6,7 @@ if(!class_exists("Status")) require_once("class/Status.php");
 ?>
 <html>
 <head>
-	<title>.:: SOCS - Médico de Olhos ::.</title>
+
 	<?php require_once("inc/header.php"); ?>
 	
 		

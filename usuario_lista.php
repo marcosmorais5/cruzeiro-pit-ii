@@ -16,7 +16,7 @@ if(!class_exists("Grupo")) require_once("class/Grupo.php");
 ?>
 <html>
 <head>
-	<title>.:: SOCS - Médico de Olhos ::.</title>
+
 	<?php require_once("inc/header.php"); ?>
 	
 
