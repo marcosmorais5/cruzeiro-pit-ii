@@ -84,7 +84,7 @@ if($_SERVER['REQUEST_METHOD'] == "GET"){
 		
 	}else if(strlen($json->nome) <= 0){
 		
-		$arr_output['response_code'] = 406;
+		$arr_output['response_code'] = 400;
 		if(strlen($json->nome) <= 0){
 			$arr_output['response_msg'] = "Para cadastrar um cliente, é necessário no mínimo fornecer o nome!";
 		}
@@ -103,7 +103,7 @@ if($_SERVER['REQUEST_METHOD'] == "GET"){
 			
 		}else{
 			
-			$arr_output['response_code'] = 406;
+			$arr_output['response_code'] = 400;
 			$arr_output['response_msg'] = "Os dados informados não foram aceitos pelo servidor. Houve alguma inconsistência com a informação. Por favor, tente novamente!";
 			
 		}
@@ -146,7 +146,7 @@ if($_SERVER['REQUEST_METHOD'] == "GET"){
 				
 			}else{
 				
-				$arr_output['response_code'] = 406;
+				$arr_output['response_code'] = 400;
 				$arr_output['response_msg'] = "Os dados informados não foram aceitos pelo servidor. Houve alguma inconsistência com a informação. Por favor, tente novamente!";
 				
 			}

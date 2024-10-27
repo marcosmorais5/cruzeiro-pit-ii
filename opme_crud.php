@@ -60,7 +60,7 @@ if($_SERVER['REQUEST_METHOD'] == "GET"){
 	
 	if(strlen($json->opme) <= 0){
 		
-		$arr_output['response_code'] = 406;
+		$arr_output['response_code'] = 400;
 		if(strlen($json->opme) <= 0){
 			$arr_output['response_msg'] = "Para cadastrar um OPME, é necessário fornecer no mínimo 2 caracteres!";
 		}
@@ -79,7 +79,7 @@ if($_SERVER['REQUEST_METHOD'] == "GET"){
 			
 		}else{
 			
-			$arr_output['response_code'] = 406;
+			$arr_output['response_code'] = 400;
 			$arr_output['response_msg'] = "Os dados informados não foram aceitos pelo servidor. Houve alguma inconsistência com a informação. Por favor, tente novamente!";
 			
 		}
@@ -113,7 +113,7 @@ if($_SERVER['REQUEST_METHOD'] == "GET"){
 			
 		}else{
 			
-			$arr_output['response_code'] = 406;
+			$arr_output['response_code'] = 400;
 			$arr_output['response_msg'] = "Os dados informados não foram aceitos pelo servidor. Houve alguma inconsistência com a informação. Por favor, tente novamente!";
 			
 		}

@@ -151,7 +151,7 @@ if($_SERVER['REQUEST_METHOD'] == "GET"){
 		
 	){
 		
-		$arr_output['response_code'] = 406;
+		$arr_output['response_code'] = 400;
 		$arr_output['response_msg'] = "Para criar um orçamento é necessário no mínimo fornecer os campos de:<br><ul><li>Cliente</li><li>Procedimento</li><li>Médico</li><li>Lateralidade</li></ul>";
 		
 	}else{
@@ -169,7 +169,7 @@ if($_SERVER['REQUEST_METHOD'] == "GET"){
 			
 		}else{
 			
-			$arr_output['response_code'] = 406;
+			$arr_output['response_code'] = 400;
 			$arr_output['response_msg'] = "Os dados informados não foram aceitos pelo servidor. Houve alguma inconsistência com a informação. Por favor, tente novamente!";
 			
 		}
@@ -333,6 +333,7 @@ if($_SERVER['REQUEST_METHOD'] == "GET"){
 			}
 				
 				
+
 	}
 	
 	
