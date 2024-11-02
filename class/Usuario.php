@@ -1,7 +1,7 @@
 <?php 
 if(!class_exists('Banco')) require_once('Banco.php');
 
-class Usuario{
+class Usuario implements BancoOperacoes{
 
 	public $idusuario;
 	public $loginusuario;

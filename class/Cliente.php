@@ -2,7 +2,7 @@
 if(!class_exists('Banco')) require_once('Banco.php');
 if(!class_exists('Orcamento')) require_once('Orcamento.php');
 
-class Cliente{
+class Cliente implements BancoOperacoes{
 
 	public $idcliente;
 	public $nome;

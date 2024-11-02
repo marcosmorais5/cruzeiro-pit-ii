@@ -1,7 +1,7 @@
 <?php 
 if(!class_exists('Banco')) require_once('Banco.php');
 
-class Status{
+class Status implements BancoOperacoes{
 
 	public static $FECHADO = 1;
 	public static $NAO_FECHADO = 2;

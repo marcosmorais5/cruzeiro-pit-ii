@@ -1,5 +1,6 @@
 <?php
 if(!class_exists('Util')) require_once('Util.php');
+if(!class_exists('BancoOperacoes')) require_once('BancoOperacoes.php');
 //if(!class_exists('Log')) require_once('Log.php');
 
 

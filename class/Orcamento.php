@@ -5,7 +5,7 @@ if(!class_exists('Usuario')) require_once('Usuario.php');
 if(!class_exists('Util')) require_once('Util.php');
 if(!class_exists('Grupo')) require_once('Grupo.php');
 
-class Orcamento{
+class Orcamento implements BancoOperacoes {
 
 	public $cod;
 	public $data = null;

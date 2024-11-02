@@ -1,7 +1,7 @@
 <?php 
 if(!class_exists('Banco')) require_once('Banco.php');
 
-class Lateralidade{
+class Lateralidade implements BancoOperacoes{
 
 	public $idlateralidade;
 	public $lateralidade;

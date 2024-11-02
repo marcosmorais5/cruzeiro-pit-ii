@@ -1,7 +1,7 @@
 <?php 
 if(!class_exists('Banco')) require_once('Banco.php');
 
-class Servico{
+class Servico implements BancoOperacoes{
 
 	public $idservico;
 	public $servico;
