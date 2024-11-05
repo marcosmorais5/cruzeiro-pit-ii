@@ -48,6 +48,18 @@ if(!class_exists("Cliente")) require_once("class/Cliente.php");
 							}else{
 								
 								UTILS.loadFieldsFromJSON(data.obj);
+
+
+								/** Se o caixa já tiver confirmado o recebimento dos valores,
+								 * então esconde os botões de exclusão e atualização
+								 * */
+								if(data.obj.caixaok == "Y"){
+
+									$("#button_submit, #button_delete").hide();
+									
+									
+								}
+
 								
 							}
 							
@@ -113,14 +125,13 @@ if(!class_exists("Cliente")) require_once("class/Cliente.php");
 							contentType: 'application/json; charset=utf-8',
 							success: function(data){
 								
-								if(data.response_code == 404 || data.response_code == 403){
+								if(data.response_code == 404 || data.response_code == 403 || data.response_code == 500){
 									
 									alert(data.response_msg);
 									
 								}else{
 									
 									location.href = 'orcamento_fila.php';
-									
 									
 								}
 								

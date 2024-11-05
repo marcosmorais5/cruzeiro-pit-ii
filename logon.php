@@ -127,7 +127,7 @@ body {
 				
 				e.preventDefault();
 				
-				console.log(UTILS.getJSONtoSave(".logon-fields"));
+				//console.log(UTILS.getJSONtoSave(".logon-fields"));
 				
 				 $.ajax({
 					 url: "logon_action.php",
@@ -157,9 +157,11 @@ body {
 						}
 						
 					 },
-					 error: function(){
+					 error: function(data){
 					 
-						
+						console.log(data);
+
+						alert("Houve um erro ao tentar fazer login. Por favor, tente novamente. Se o erro persistir, contate o administrador! <br><br>Mensgem de erro do servidor: ("+ data.responseText +")")
 					 
 					 },
 					 data: JSON.stringify(UTILS.getJSONtoSave(".logon-fields"))

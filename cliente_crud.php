@@ -75,6 +75,7 @@ if($_SERVER['REQUEST_METHOD'] == "GET"){
 	
 	
 	
+	/** Qualquer outro grupo, diferente do CAIXA pode cadastar usuário */
 	$PODE_CRIAR_USUARIO = Usuario::getGrupoUsuario((int)$_SESSION['cod_usuario']) != "CAIXA";
 	
 	if(!$PODE_CRIAR_USUARIO){

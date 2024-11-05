@@ -345,24 +345,38 @@ if($_SERVER['REQUEST_METHOD'] == "GET"){
 
 		
 	if($search_obj != null){
+		
+		/** Um orçamento só pode ser excluído pelo dono do registro ou Admin/Admin-mestre */
+		 if($COD_USUARIO == $search_obj->getCraetedby() || $IS_ADMIN_OU_MESTRE){
 			
-		if($COD_USUARIO == $search_obj->getCraetedby() || $IS_ADMIN_OU_MESTRE){
 			
-			$search_obj->setDeletedby($COD_USUARIO);
-			$ret = $search_obj->excluir();
-			
-			if($ret){
-				
-				$arr_output['obj'] = $search_obj;
-				$arr_output['response_code'] = 200;
-				$arr_output['response_msg'] = "Registro atualizado com sucesso!";
-				
+			/** Se o caixa, já tiver dado OK para o recebimento, não é possível excluir o registro */
+			if($search_obj->isCaixaOK()){
+
+				$arr_output['response_code'] = 500;
+				$arr_output['response_msg'] = "O caixa já confirmou o recebimento deste orçamento, não é possível realizar a exclusão do mesmo!";
+
+			/** O registro pode ser excluído, pois não há problemas de que impessam */
 			}else{
+
+				$search_obj->setDeletedby($COD_USUARIO);
+				$ret = $search_obj->excluir();
 				
-				$arr_output['response_code'] = 400;
-				$arr_output['response_msg'] = "Os dados informados não foram aceitos pelo servidor. Houve alguma inconsistência com a informação. Por favor, tente novamente!";
-				
+				if($ret){
+					
+					$arr_output['obj'] = $search_obj;
+					$arr_output['response_code'] = 200;
+					$arr_output['response_msg'] = "Registro atualizado com sucesso!";
+					
+				}else{
+					
+					$arr_output['response_code'] = 400;
+					$arr_output['response_msg'] = "Os dados informados não foram aceitos pelo servidor. Houve alguma inconsistência com a informação. Por favor, tente novamente!";
+					
+				}
+
 			}
+			
 			
 		}else{
 			
