@@ -56,7 +56,12 @@ if(!class_exists("Cliente")) require_once("class/Cliente.php");
 								if(data.obj.caixaok == "Y"){
 
 									$("#button_submit, #button_delete").hide();
-									
+
+									$("#place-holder-message-top").after("<div class='alert alert-warning' role='warning'>"+
+										"Este orçamento já foi fechado. Não é possível atualizar ou excluir o mesmo!");
+
+									$(".to-save").attr("disabled", true);
+
 									
 								}
 
