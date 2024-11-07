@@ -190,13 +190,6 @@ class TipoPagamento implements BancoOperacoes{
 		$ban->setCampo("tipo_pagamento", $this->getTipopagamento());
 	}
 	
-		
-	//public static function getAllStatic(){
-	//	
-	//	$obj = new TipoPagamento();
-	//	return $obj->getAll();
-	//	
-	//}
 	
 	public static function getAllStatic($get_hash = null){
 		
