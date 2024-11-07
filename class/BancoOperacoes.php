@@ -1,5 +1,5 @@
 <?php
-// Definindo a interface
+// Definindo a interface para implementação nas classes
 interface BancoOperacoes {
     public function inserir();
     public function atualizar();

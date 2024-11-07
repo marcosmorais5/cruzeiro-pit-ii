@@ -201,13 +201,6 @@ class Status implements BancoOperacoes{
 	/*IMPLEMENTANDO O MÉTODO SET DOS CAMPOS DESTA CLASSE*/
 		$ban->setCampo("de_status", $this->getDestatus());
 	}
-
-	//public static function getAllStatic(){
-	//	
-	//	$obj = new Status();
-	//	return $obj->getAll();
-	//	
-	//}
 	
 	public static function getAllStatic($get_hash = null){
 		

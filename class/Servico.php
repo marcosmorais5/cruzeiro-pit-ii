@@ -190,13 +190,6 @@ class Servico implements BancoOperacoes{
 		$ban->setCampo("servico", $this->getServico());
 	}
 	
-	//public static function getAllStatic(){
-	//	
-	//	$obj = new Servico();
-	//	return $obj->getAll();
-	//	
-	//}
-	
 	public static function getAllStatic($get_hash = null){
 		
 		$obj = new Servico();
