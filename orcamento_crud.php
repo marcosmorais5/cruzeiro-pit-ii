@@ -193,10 +193,13 @@ if($_SERVER['REQUEST_METHOD'] == "GET"){
 		$arr_output['response_code'] = 404;
 		$arr_output['response_msg'] = "Este orçamento existe, mas ele não está disponível para o caixa. Isso significa que o caixa já confirmou o recebimento do valor anteriormente.";
 		
+	/** O dono do orçamento, vê em sua fila de orçamentos os mesmos que estão preparados para os próximos dias
+	 * e pode confirmar que está tudo OK para a execução dos mesmos
+	 */
 	}else if($_GET['orcamento_tudo_ok'] == "confirma"){
 		
 		
-		
+		/** Só é possível confirmar que está tudo OK, quando o caixa já a confirmação de recebimento dos valores. */
 		if( $search_obj->requerPagamento() && !$search_obj->isCaixaOK() ){
 			
 			$arr_output['response_code'] = 400;
@@ -266,11 +269,6 @@ if($_SERVER['REQUEST_METHOD'] == "GET"){
 				$arr_output['response_msg'] = "Este orçamento existe, mas ele não está disponível para o caixa. Isso significa que o caixa já confirmou o recebimento do valor anteriormente.";
 				
 			}
-			
-			
-			
-			
-			
 			
 		}else{
 			

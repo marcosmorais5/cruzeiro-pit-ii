@@ -14,7 +14,9 @@
 			<a class="nav-link text-white" href="index.php">Início</a>
 		  </li>
 		
-		<?php if($_SESSION['grupo'] != "CAIXA"){ ?>
+		<?php
+		/** INICIO: Este menu só aparece para quem não é do grupo CAIXA */
+		if($_SESSION['grupo'] != "CAIXA"){ ?>
 		  
 		  <li class="navbar-brand nav-item dropdown">
 			<a class="nav-link dropdown-toggle text-white" href="#" id="navbarCirurgia" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -26,7 +28,12 @@
 			  
 			</div>
 		  </li>
-		  <?php if($_SESSION['grupo'] == "ADMINISTRADOR" || $_SESSION['grupo'] == "ADMINISTRADOR_MESTRE"){ ?>
+		  <?php
+		  /** INICIO: Os relatórios só aparecem para usuário ADMINISTRADOR ou MESTRE */
+		  if(
+				$_SESSION['grupo'] == "ADMINISTRADOR" ||
+				$_SESSION['grupo'] == "ADMINISTRADOR_MESTRE"
+			){ ?>
 		  <li class="navbar-brand nav-item dropdown">
 			<a class="nav-link dropdown-toggle text-white" href="#" id="navbarMasterData" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 			  &nbsp; Relatório &nbsp;
@@ -41,7 +48,9 @@
 			  
 			</div>
 		  </li>
-		<?php } ?>
+		<?php }
+		/** FIM: Os relatórios só aparecem para usuário ADMINISTRADOR ou MESTRE */
+		?>
 		  
 		  
 		  <li class="navbar-brand nav-item dropdown">
@@ -50,10 +59,14 @@
 			</a>
 			<div class="dropdown-menu" aria-labelledby="navbarMasterData">
 				
-			<?php if($_SESSION['grupo'] != "USUARIO"){ ?>
+			<?php
+			/** INICIO: Criação de usuários só aparece para usuário ADMINISTRADOR ou MESTRE */
+			if($_SESSION['grupo'] != "USUARIO"){ ?>
 			  <a class="dropdown-item" href="usuario_lista.php">Lista de Usuários</a>
 			  <a class="dropdown-item" href="usuario_cadastro.php">Criar Usuário</a>
-			<?php } ?>
+			<?php }
+			/** FIM: Criação de usuários só aparece para usuário ADMINISTRADOR ou MESTRE */
+			?>
 			 
 			  <a class="dropdown-item" href="cliente_lista.php">Lista de Clientes</a>
 			  <a class="dropdown-item" href="cliente_cadastro.php">Criar Cliente</a>
@@ -69,7 +82,9 @@
 			  
 			</div>
 		  </li>
-		<?php } ?>
+		<?php }
+		/** FIM: Este menu só aparece para quem não é do grupo CAIXA */
+		?>
 
 		  <li class="navbar-brand nav-item">
 			<a class="nav-link" href="logon.php" style="color: #FFFF00">Sair</a>

@@ -64,7 +64,17 @@ var MONTHS_CHART = ["", "Janeiro", "Feveireo", "Março", "Abril", "Maio", "Junho
 					
 					$("#"+ options.target_id)
 						.html(tabela)
-						.table2ColumnChart({"width": "100%", "title": options.title, vAxis: {title: "Valor em R$", format: "currency"}});
+						.table2ColumnChart({"width": "100%", "title": options.title,
+							vAxis: {
+								title: "Valor em R$",
+								format: "currency",
+								minValue: 0,
+								viewWindow: {
+									min: 0
+								}
+							}
+						
+					});
 				}		
 			});
 			
@@ -187,14 +197,13 @@ var MONTHS_CHART = ["", "Janeiro", "Feveireo", "Março", "Abril", "Maio", "Junho
 					tabela += "</tbody><table>";
 					
 					
-					
 					$("#"+ options.target_id)
 						.html(tabela);
 					
-					
+					/** Gerando o gráfico, se houver dados para gerar o gráfico de pizza */
 					if($total > 0) $("#"+ options.target_id).table2PieChart({
 						"width": "100%", "title": options.title, legend: "none",
-						vAxis: {title: "Valor em R$ "}
+						vAxis: {title: "Valor em R$"}
 					});
 					
 					        

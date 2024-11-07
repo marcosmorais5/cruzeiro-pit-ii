@@ -133,7 +133,6 @@ if(!class_exists("Status")) require_once("class/Status.php");
 									
 									
 										
-										console.log("Fila de orcamentos (obj): "+ JSON.stringify(obj));
 										
 										
 										

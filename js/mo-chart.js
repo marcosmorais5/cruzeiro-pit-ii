@@ -300,6 +300,8 @@
 			chartType = OPTIONS.chartType;
 			options = OPTIONS.options;
 			
+			console.log("data = "+ JSON.stringify(data));
+			
 			var chart_data = google.visualization.arrayToDataTable(data);
 
 			//var options = {
@@ -308,6 +310,8 @@
 			//  
 			//};
 			
+			console.log("chartType = '"+ chartType +"', target_obj = '"+ target_obj +"'")
+			console.log("options = "+ JSON.stringify(options) );
 			
 			var chart = new google.visualization[chartType]( document.getElementById(target_obj) );
 			

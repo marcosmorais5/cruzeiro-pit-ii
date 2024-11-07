@@ -87,7 +87,6 @@ if(!class_exists("Grupo")) require_once("class/Grupo.php");
 									$.each(orcamentos, function(iOrcamento, orcamento){
 										
 										$(id).append("<a title='Abrir este orçamento' href='orcamento_cadastro.php?cod="+ orcamento.cod +"&proveniente=<?=urlencode($_SERVER['SCRIPT_NAME'])?>'>Orçamento "+ orcamento.cod +"</a><br>");
-										console.log(id + " = "+ $(id).html());
 										
 										
 									});
