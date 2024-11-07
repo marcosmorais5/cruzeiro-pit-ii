@@ -6,7 +6,7 @@ if(!class_exists('Util')) require_once('class/Util.php');
 
 	
 	
-	<title>.: Sistema de Orçamentos :.</title>
+	<title>.: SOO - Sistema de Orçamentos Oftamológicos :.</title>
 	<script>
 		
 		

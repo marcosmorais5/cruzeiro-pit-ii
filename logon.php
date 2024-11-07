@@ -187,8 +187,9 @@ body {
 				
 
 				<div class="text-center mb-4">
-					<img class="mb-4" src="https://medicosdeolhos.com.br/wp-content/uploads/2020/02/logo-padrao-2.png" alt="" width="350">
-					<h1 class="h3 mb-3 font-weight-bold">SOC - Sistema</h1>
+					<!-- <img class="mb-4" src="https://medicosdeolhos.com.br/wp-content/uploads/2020/02/logo-padrao-2.png" alt="" width="350"> -->
+					<h1 class="h3 mb-3 font-weight-bold">SOO - Sistema de Orçamentos Oftamológicos</h1>
+					<!-- <h1 class="h3 mb-3 font-weight-bold">SOC - Sistema</h1> -->
 				</div>
 
 					

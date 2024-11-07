@@ -1,10 +1,11 @@
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark text-white">
 	  <!-- <a class="navbar-brand" href="#">Menu Principal</a> -->
 	  <a class="navbar-brand text-white" href="#">
-		<img src="img/logo-menu-navbar.png" height="30" class="d-inline-block align-top" alt="">
-		Sistema SOC
+		<!-- <img src="img/logo-menu-navbar.png" height="30" class="d-inline-block align-top" alt=""> -->
+		<span style="font-weight: bold; font-size: 1.8em">SOO | &nbsp;</span>
 	  </a>
   
+	  
 	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
 		<span class="navbar-toggler-icon"></span>
 	  </button>

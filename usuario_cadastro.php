@@ -61,7 +61,10 @@ if(!class_exists("Grupo")) require_once("class/Grupo.php");
 								
 							}else{
 								
+								
 								UTILS.loadFieldsFromJSON(data.obj);
+
+								$("#loginusuario").attr("readonly", true);
 								
 								
 							}
@@ -79,8 +82,8 @@ if(!class_exists("Grupo")) require_once("class/Grupo.php");
 				}
 				
 				let method_type = (<?=(int)$_GET['idusuario']?> > 0) ? "PUT" : "POST";
-				/* POST ACTION: LISTEN THE FORM AND PARSE 'to-save' TO JSON */
 				
+				/* POST ACTION: LISTEN THE FORM AND PARSE 'to-save' TO JSON */
 				UTILS.postData({
 					
 					"obj": "#form_cad_usuario",

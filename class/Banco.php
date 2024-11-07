@@ -140,7 +140,11 @@ class Banco{
 		//echo("<div><div style='padding:3px;background-color:#C0C0C0;font-family:arial;font-size:12px;font-weight:bold'>ERRO - Houve uma falha ao realizar uma operação.</div><div style='padding:2px;border:1px solid #C0C0C0;font-size:12px;background-color:#F1F1F1;font-family:arial'>".
 		//		$msg_erro . $erro_mysql ."</div><div>");
 		
-		echo("Erro no banco de dados!<br>Tente executar a operação novamente, se o erro persistir, contate o administrador.");
+		echo("Erro no banco de dados!<br>Tente executar a operação novamente, se o erro persistir, contate o administrador.\n");
+		
+		/** Adaptacao necessaria para ver o erro do servidor AwardSpace */
+		echo("Erro do MySQL: Err no.: ". mysqli_errno($this->con) ." | Desc: ". mysqli_error($this->con));
+
 		if(class_exists("Log")) Log::log2fileFATAL($msg_erro . $erro_mysql);
 		//return false;
 		

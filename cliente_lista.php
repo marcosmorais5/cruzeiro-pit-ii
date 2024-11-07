@@ -20,7 +20,7 @@ if(!class_exists("Grupo")) require_once("class/Grupo.php");
 			jQuery(document).ready(function(){
 					
 					
-					let numero_de_colunas = 5;
+					let numero_de_colunas = 6;
 					let total_geral = 0.0;
 					let DEL = "\n";
 					let arr_linhas = new Array();

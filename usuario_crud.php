@@ -116,76 +116,88 @@ if($_SERVER['REQUEST_METHOD'] == "GET"){
 	
 
 	$obj->setIdusuario($json->idusuario);
-	$search_obj = $obj->getOne();
+	$obj->setLoginusuario($json->loginusuario);
 	
 	
-	if($search_obj != null){
-			
-			if(
-				Usuario::getGrupoUsuario((int)$_SESSION['cod_usuario']) == "ADMINISTRADOR" ||
-				Usuario::getGrupoUsuario((int)$_SESSION['cod_usuario']) == "ADMINISTRADOR_MESTRE"
-			){
 
-				$arr_output['json'] = $json;
+	/** O usuário tentou atualiar o registro, atribuiu o e-mail de um outro usuário a este, o que não pode acontecer */
+	if($obj->existeEmailParaOutroUsuario()){
+
+		$arr_output['response_code'] = 400;
+		$arr_output['response_msg'] = "O e-mail/login que você tentou usar, já é utilizado por outro usuário do sistema. Não é possível duplicar! Atualização não realizada!";
+
+	}else{
+		
+		/** Buscando o registro pelo ID, para atualização */
+		$search_obj = $obj->getOne();
+
+		if($search_obj != null){
 				
-				
-				$search_obj->setIdusuario($json->idusuario);
-				$search_obj->setLoginusuario($json->loginusuario);
-				$search_obj->setNomeusuario($json->nomeusuario);
-				$search_obj->setAtivo($json->ativo);
-				$search_obj->setGrupo($json->grupo);
-				
-				if(isset($json->senhausuarioreinicializar)){
+				if(
+					Usuario::getGrupoUsuario((int)$_SESSION['cod_usuario']) == "ADMINISTRADOR" ||
+					Usuario::getGrupoUsuario((int)$_SESSION['cod_usuario']) == "ADMINISTRADOR_MESTRE"
+				){
+
+					$arr_output['json'] = $json;
 					
-					if(trim($json->senhausuarioreinicializar) != ""){
-						$search_obj->setSenhausuario(sha1($json->senhausuarioreinicializar));
+					
+					$search_obj->setIdusuario($json->idusuario);
+					$search_obj->setLoginusuario($json->loginusuario);
+					$search_obj->setNomeusuario($json->nomeusuario);
+					$search_obj->setAtivo($json->ativo);
+					$search_obj->setGrupo($json->grupo);
+					
+					if(isset($json->senhausuarioreinicializar)){
+						
+						if(trim($json->senhausuarioreinicializar) != ""){
+							$search_obj->setSenhausuario(sha1($json->senhausuarioreinicializar));
+						}
+						
 					}
 					
-				}
-				
-				if(Usuario::getGrupoUsuario((int)$_SESSION['cod_usuario']) != "ADMINISTRADOR_MESTRE" && $json->grupo == "ADMINISTRADOR_MESTRE"){
-		
-					$arr_output['response_code'] = 403;
-					$arr_output['response_msg'] = "Você não tem autorização para atribuir O novo um usuário ao grupo 'ADMINISTRADOR_MESTRE'!";
-					
-				}else{
-					
-					$ret = $search_obj->atualizar();
-		
-					if($ret){
-						
-						$arr_output['obj'] = $search_obj;
-						$arr_output['response_code'] = 200;
-						$arr_output['response_msg'] = "Registro atualizado com sucesso!";
+					if(Usuario::getGrupoUsuario((int)$_SESSION['cod_usuario']) != "ADMINISTRADOR_MESTRE" && $json->grupo == "ADMINISTRADOR_MESTRE"){
+			
+						$arr_output['response_code'] = 403;
+						$arr_output['response_msg'] = "Você não tem autorização para atribuir O novo um usuário ao grupo 'ADMINISTRADOR_MESTRE'!";
 						
 					}else{
 						
-						$arr_output['response_code'] = 400;
-						$arr_output['response_msg'] = "Os dados informados não foram aceitos pelo servidor. Houve alguma inconsistência com a informação. Por favor, tente novamente!";
+						$ret = $search_obj->atualizar();
+			
+						if($ret){
+							
+							$arr_output['obj'] = $search_obj;
+							$arr_output['response_code'] = 200;
+							$arr_output['response_msg'] = "Registro atualizado com sucesso!";
+							
+						}else{
+							
+							$arr_output['response_code'] = 400;
+							$arr_output['response_msg'] = "Os dados informados não foram aceitos pelo servidor. Houve alguma inconsistência com a informação. Por favor, tente novamente!";
+							
+						}
 						
 					}
+
+					
+				}else{
+					
+					$arr_output['response_code'] = 403;
+					$arr_output['response_msg'] = "Você não tem permissão para atualizar este registro!";
 					
 				}
-
 				
-			}else{
 				
-				$arr_output['response_code'] = 403;
-				$arr_output['response_msg'] = "Você não tem permissão para atualizar este registro!";
-				
-			}
 			
 			
-		
-		
-	}else{
-		
-		$arr_output['response_code'] = 404;
-		$arr_output['response_msg'] = "Nenhum registro encontrado para o código informado.";
-		
+		}else{
+			
+			$arr_output['response_code'] = 404;
+			$arr_output['response_msg'] = "Nenhum registro encontrado para o código informado.";
+			
+		}
+	
 	}
-	
-	
 	
 }else if($_SERVER['REQUEST_METHOD'] == "DELETE"){
 	

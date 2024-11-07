@@ -296,7 +296,7 @@ if(!class_exists("Grupo")) require_once("class/Grupo.php");
 						<h1>O que você deseja fazer?</h1>
 				
 						<ul>
-							<li><a href="orcamento_fila.php">Ver sua fila de orçamentos</a></li>
+							<li><a href="orcamento_fila.php"><strong>Ver sua fila de orçamentos</strong></a></li>
 							
 							<li><a href="orcamento_cadastro.php">Cadastrar orçamento</a></li>
 							
@@ -357,10 +357,6 @@ if(!class_exists("Grupo")) require_once("class/Grupo.php");
 	</div>
 	
 	<?php require_once("inc/footer.php"); ?>
-
-
-
-	<?php echo "Tempo até o Ponto 1: " . (microtime(true) - $start_time) . " segundos.<br>"; ?>
 
 </body>
 </html>

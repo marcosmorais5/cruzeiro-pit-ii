@@ -156,6 +156,29 @@ class Usuario implements BancoOperacoes{
 
 	}
 
+	/** Importante para validação de e-mails, antes da atualização de usuários */
+	public function getUmRegistroPorEmail(){
+
+		$ban = new Banco();
+
+		/** Verifica se o email existe e seja diferente do registro atual */
+		$ban->setCondicao("login_usuario = '". $this->getLoginusuario() ."' AND id_usuario != ". $this->getIdusuario());
+
+		$ret_ = $this->getGenericSelect($ban);
+		if(sizeof($ret_) > 0){
+			return $ret_[0];
+		}else{
+			return null;
+		}
+
+	}
+
+	public function existeEmailParaOutroUsuario(){
+
+		return ($this->getUmRegistroPorEmail() != null);
+
+	}
+
 	/*IMPLEMENTANDO O MÉTODO DE TODOS OS REGISTROS*/
 	public function getTodosRegistros($params = null){
 
