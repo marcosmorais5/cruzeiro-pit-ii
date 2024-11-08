@@ -24,14 +24,21 @@ if(!class_exists("Grupo")) require_once("class/Grupo.php");
 		jQuery(document).ready(function(){
 			
 			
+			var TIMEOUT_FILA_CAIXA;
+
+			/** Adicionar a função de click para o botão do caixa, quando da confirmação de recebimento do valor */
 			function actionCaixaRecebeu(){
 				
 				$(".caixa-recebeu").click(function(){
 					
+					/** Parâmetro JSON contido no objeto HTML */
 					PUT = $(this).attr("PUT");
 					
 					if(confirm("Confirmar o recebimento do valor por para do cliente para este orçamento?")){
 						
+						/** Lima o timeout da fila do caixa. A função inicia automaticamente. */
+						clearTimeout(TIMEOUT_FILA_CAIXA);
+
 						$.ajax({
 							
 							url: "orcamento_crud.php?caixa_pagamento=confirma",
@@ -166,9 +173,9 @@ if(!class_exists("Grupo")) require_once("class/Grupo.php");
 						
 					}
 				});
-				
-				
-				setTimeout(carregarPainelCaixa, CONTINUOUS_UPDATE_SECONDS * 1000);
+			
+				/** Atualizando a fila automaticamente */
+				TIMEOUT_FILA_CAIXA = setTimeout(carregarPainelCaixa, CONTINUOUS_UPDATE_SECONDS * 1000);
 			}
 			
 			
@@ -189,6 +196,7 @@ if(!class_exists("Grupo")) require_once("class/Grupo.php");
 	<script>
 		jQuery(document).each(function(){
 			
+			/** Carregar os próximos eventos que aparece na fila dos usuários/analistas. Eles podem verificar se está tudo OK para o procedimento */
 			geraTabelaProximosEventos("#orcamentoProximosAcontecimentos");
 			
 		});
