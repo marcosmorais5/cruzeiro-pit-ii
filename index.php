@@ -72,7 +72,7 @@ if(!class_exists("Grupo")) require_once("class/Grupo.php");
 			}
 			
 			/** Atualização do painel da fila do caixa. A atualização é realizada automaticamente */
-			cont CONTINUOUS_UPDATE_SECONDS = 30;
+			const CONTINUOUS_UPDATE_SECONDS = 30;
 
 			function carregarPainelCaixa(){
 				
