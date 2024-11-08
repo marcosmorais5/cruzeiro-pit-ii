@@ -71,6 +71,9 @@ if(!class_exists("Grupo")) require_once("class/Grupo.php");
 				
 			}
 			
+			/** Atualização do painel da fila do caixa. A atualização é realizada automaticamente */
+			cont CONTINUOUS_UPDATE_SECONDS = 30;
+
 			function carregarPainelCaixa(){
 				
 				/* MOSTRA A BARRA DE FILA DO CAIXA */
@@ -164,11 +167,13 @@ if(!class_exists("Grupo")) require_once("class/Grupo.php");
 					}
 				});
 				
+				
+				setTimeout(carregarPainelCaixa, CONTINUOUS_UPDATE_SECONDS * 1000);
 			}
 			
 			
 			
-			/* INICIA O CARRETAMENTO DA TABELA */
+			/* Carregando a lista de pendências do caixa do caixa */
 			carregarPainelCaixa();
 			
 			
